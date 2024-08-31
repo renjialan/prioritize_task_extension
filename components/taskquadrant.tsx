@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Draggable } from 'react-beautiful-dnd';
 
 interface TaskQuadrantProps {
   title: string;
   color: string;
+  tasks: Array<{ id: string; description: string }>;
 }
 
 const Quadrant = styled.div<{ color: string }>`
@@ -24,11 +26,32 @@ const Title = styled.h2`
   color: #fff;
 `;
 
-const TaskQuadrant: React.FC<TaskQuadrantProps> = ({ title, color }) => {
+const TaskCard = styled.div`
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: grab;
+`;
+
+const TaskQuadrant: React.FC<TaskQuadrantProps> = ({ title, color, tasks }) => {
   return (
     <Quadrant color={color}>
       <Title>{title}</Title>
-      {/* Task list and input can be added here */}
+      {tasks.map((task, index) => (
+        <Draggable key={task.id} draggableId={task.id} index={index}>
+          {(provided) => (
+            <TaskCard
+              ref={provided.innerRef}
+              {...provided.draggableProps}
+              {...provided.dragHandleProps}
+            >
+              <p>{task.description}</p>
+            </TaskCard>
+          )}
+        </Draggable>
+      ))}
     </Quadrant>
   );
 };

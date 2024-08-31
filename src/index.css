@@ -1,44 +1,36 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  color: #333;
   background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  overflow: hidden;
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.matrix-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  width: 80%;
+  height: 80%;
 }
 
 .quadrant {
+  background: #f0f0f0;
+  border-radius: 10px;
   padding: 20px;
-  color: #333;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.quadrant.important-urgent {
-  background-color: #FF6B6B;
+.task-card {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: grab;
 }
 
-.quadrant.important-not-urgent {
-  background-color: #FFD93D;
-}
-
-.quadrant.urgent-not-important {
-  background-color: #4ECDC4;
-}
-
-.quadrant.not-important-not-urgent {
-  background-color: #C7F9CC;
-}
-
-@media (max-width: 768px) {
-  .quadrant {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+.task-card:active {
+  cursor: grabbing;
 }
