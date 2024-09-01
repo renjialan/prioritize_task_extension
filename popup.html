@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Prioritization Matrix</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Prioritization Matrix</h1>
+        <div class="matrix">
+            <div class="quadrant" id="important-urgent">
+                <h2>Important & Urgent</h2>
+                <ul class="task-list"></ul>
+            </div>
+            <div class="quadrant" id="important-not-urgent">
+                <h2>Important & Not Urgent</h2>
+                <ul class="task-list"></ul>
+            </div>
+            <div class="quadrant" id="not-important-urgent">
+                <h2>Not Important & Urgent</h2>
+                <ul class="task-list"></ul>
+            </div>
+            <div class="quadrant" id="not-important-not-urgent">
+                <h2>Not Important & Not Urgent</h2>
+                <ul class="task-list"></ul>
+            </div>
+        </div>
+        <div class="task-input">
+            <input type="text" id="task-description" placeholder="Enter task description">
+            <select id="task-quadrant">
+                <option value="important-urgent">Important & Urgent</option>
+                <option value="important-not-urgent">Important & Not Urgent</option>
+                <option value="not-important-urgent">Not Important & Urgent</option>
+                <option value="not-important-not-urgent">Not Important & Not Urgent</option>
+            </select>
+            <button id="add-task">Add Task</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

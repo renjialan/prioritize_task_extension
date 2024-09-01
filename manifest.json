@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Task Prioritization Matrix",
+    "version": "1.0",
+    "description": "A beautiful task prioritization extension based on the Eisenhower Matrix",
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "permissions": [
+      "storage"
+    ],
+    "icons": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
